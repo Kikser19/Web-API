@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Aspekt.Api.Controllers.CompanyController",
+    "Method": "createCompany",
+    "RelativePath": "api/Company/createCompany",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newCompany",
+        "Type": "Aspekt.Application.Request_Models.Company_Request.CreateCompanyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Aspekt.Api.Controllers.CompanyController",
+    "Method": "getAllCompanies",
+    "RelativePath": "api/Company/getCompanies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
