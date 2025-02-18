@@ -173,3 +173,4 @@ C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\refint\Aspekt
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\Aspekt.pdb
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\Aspekt.genruntimeconfig.cache
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\ref\Aspekt.dll
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\Aspekt.sourcelink.json

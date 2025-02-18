@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aspekt.Application.Command.Company_Commands
 {
-    public class AddCompanyCommand : IRequest<CompanyCreateResponse>
+    public class CreateCompanyCommand : IRequest<CompanyCreateResponse>
     {
         [Required]
         public CreateCompanyRequest Company { get; set; }

@@ -28,9 +28,31 @@ namespace Aspekt.Api.Controllers
         [HttpPost("createCompany")]
         public async Task<IActionResult> createCompany(CreateCompanyRequest newCompany)
         {
-            var results = await _mediator.Send(new AddCompanyCommand { Company = newCompany }, default);
+            var results = await _mediator.Send(new CreateCompanyCommand { Company = newCompany }, default);
             return Ok(results);
         }
 
+        [HttpDelete("/company/{id}")]
+        public async Task<IActionResult> deleteCompany(int id)
+        {
+            var result = await _mediator.Send(new DeleteCompanyCommand { Id = id }, default);
+            return Ok(result);
+        }
+
+        [HttpGet("/company/{id}")]
+        public async Task<ActionResult<CompanyGetByIdQuery>> GetById(int id)
+        {
+            Console.WriteLine("vleze");
+            var result = await _mediator.Send(new CompanyGetByIdQuery { Id = id }, default);
+            return Ok(result);
+        }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCompany(UpdateCompanyRequest companyRequest, [FromRoute] int id)
+        {
+            companyRequest.Id = id;
+            var result = await _mediator.Send(new UpdateCompanyCommand { Company = companyRequest }, default);
+            return Ok(result);
+        }
     }
 }

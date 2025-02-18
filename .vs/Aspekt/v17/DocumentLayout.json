@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\api\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\api\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\handlers\\country handlers\\updatecountryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\handlers\\country handlers\\updatecountryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\handlers\\company handlers\\createcompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\handlers\\company handlers\\createcompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\services\\implementation\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\services\\implementation\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\infrastructure\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\infrastructure\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\infrastructure\\implementation\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\infrastructure\\implementation\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\response models\\company response\\companycreateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\response models\\company response\\companycreateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\domain\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\domain\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\command\\company commands\\addcompanycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\command\\company commands\\addcompanycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|c:\\users\\angel\\onedrive\\desktop\\app\\aspekt\\aspekt\\application\\handlers\\company handlers\\updatecompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FE4E0-4749-464A-9DF9-56FB2A1CC90B}|Aspekt\\Aspekt.csproj|solutionrelative:aspekt\\application\\handlers\\company handlers\\updatecompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Api\\Controllers\\CompanyController.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Api\\Controllers\\CompanyController.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Api\\Controllers\\CompanyController.cs",
-              "RelativeToolTip": "Aspekt\\Api\\Controllers\\CompanyController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAqwCIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:33:14.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CompanyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Infrastructure\\Implementation\\CompanyRepository.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Infrastructure\\Implementation\\CompanyRepository.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Infrastructure\\Implementation\\CompanyRepository.cs",
-              "RelativeToolTip": "Aspekt\\Infrastructure\\Implementation\\CompanyRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:19:54.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompanyService.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Services\\Implementation\\CompanyService.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Application\\Services\\Implementation\\CompanyService.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Services\\Implementation\\CompanyService.cs",
-              "RelativeToolTip": "Aspekt\\Application\\Services\\Implementation\\CompanyService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:18:53.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ICompanyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Infrastructure\\Interfaces\\ICompanyRepository.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Infrastructure\\Interfaces\\ICompanyRepository.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Infrastructure\\Interfaces\\ICompanyRepository.cs",
-              "RelativeToolTip": "Aspekt\\Infrastructure\\Interfaces\\ICompanyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:12:18.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Company.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Domain\\Entities\\Company.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Domain\\Entities\\Company.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Domain\\Entities\\Company.cs",
-              "RelativeToolTip": "Aspekt\\Domain\\Entities\\Company.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:10:16.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreateCompanyHandler.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Company Handlers\\CreateCompanyHandler.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Application\\Handlers\\Company Handlers\\CreateCompanyHandler.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Company Handlers\\CreateCompanyHandler.cs",
-              "RelativeToolTip": "Aspekt\\Application\\Handlers\\Company Handlers\\CreateCompanyHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Title": "UpdateCompanyHandler.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Company Handlers\\UpdateCompanyHandler.cs",
+              "RelativeDocumentMoniker": "Aspekt\\Application\\Handlers\\Company Handlers\\UpdateCompanyHandler.cs",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Company Handlers\\UpdateCompanyHandler.cs",
+              "RelativeToolTip": "Aspekt\\Application\\Handlers\\Company Handlers\\UpdateCompanyHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:05:30.476Z",
+              "WhenOpened": "2025-02-18T02:05:50.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CompanyCreateResponse.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Response Models\\Company Response\\CompanyCreateResponse.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Application\\Response Models\\Company Response\\CompanyCreateResponse.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Response Models\\Company Response\\CompanyCreateResponse.cs",
-              "RelativeToolTip": "Aspekt\\Application\\Response Models\\Company Response\\CompanyCreateResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UpdateCountryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Country Handlers\\UpdateCountryHandler.cs",
+              "RelativeDocumentMoniker": "Aspekt\\Application\\Handlers\\Country Handlers\\UpdateCountryHandler.cs",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Handlers\\Country Handlers\\UpdateCountryHandler.cs",
+              "RelativeToolTip": "Aspekt\\Application\\Handlers\\Country Handlers\\UpdateCountryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:00:39.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddCompanyCommand.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Command\\Company Commands\\AddCompanyCommand.cs",
-              "RelativeDocumentMoniker": "Aspekt\\Application\\Command\\Company Commands\\AddCompanyCommand.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Desktop\\App\\Aspekt\\Aspekt\\Application\\Command\\Company Commands\\AddCompanyCommand.cs",
-              "RelativeToolTip": "Aspekt\\Application\\Command\\Company Commands\\AddCompanyCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T20:59:44.388Z",
+              "WhenOpened": "2025-02-18T02:05:26.998Z",
               "EditorCaption": ""
             }
           ]

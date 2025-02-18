@@ -16,17 +16,32 @@ namespace Aspekt.Infrastructure.Implementation
         }
         public async Task<List<Company>> GetAll()
         {
-            var result = await _applicationDbContext.Companies.ToListAsync();
-            return result;
+            return await _applicationDbContext.Companies.ToListAsync();
         }
         public async Task<CompanyCreateResponse> Create(Company company)
         {
             _applicationDbContext.Companies.Add(company);
-            await _applicationDbContext.SaveChangesAsync(); // This is already async
+            await _applicationDbContext.SaveChangesAsync();
 
-            return new CompanyCreateResponse(company); // Directly return the response
+            return new CompanyCreateResponse(company);
         }
 
+        public async Task<Company> GetById(int id)
+        {
+            return await _applicationDbContext.Set<Company>().FindAsync(id);
+        }
 
+        public async Task Delete(Company company)
+        {
+            _applicationDbContext.Set<Company>().Remove(company);
+            await _applicationDbContext.SaveChangesAsync();
+        }
+
+        public async Task<Company> Update(Company company)
+        {
+            _applicationDbContext.Update(company);
+            await _applicationDbContext.SaveChangesAsync();
+            return company;
+        }
     }
 }

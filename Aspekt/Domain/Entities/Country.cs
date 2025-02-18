@@ -11,5 +11,10 @@ namespace Aspekt.Domain.Entities
         public string CountryName { get; set; }
 
         public List<Contact> Contacts { get; set; } = new List<Contact>();
+
+        public Country(string countryName)
+        {
+            this.CountryName = countryName;
+        }
     }
 }
