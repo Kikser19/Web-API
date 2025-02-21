@@ -11,5 +11,6 @@ namespace Aspekt.Application.Services.Interfaces
         Task<CountryCreateResponse> Create(Country country);
         Task Delete(int id);
         Task<Country> Update(Country country);
+        Task<Dictionary<string, int>> GetCompanyStatisticsByCountryId(int countryId);
     }
 }

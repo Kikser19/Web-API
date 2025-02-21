@@ -29,13 +29,37 @@ namespace Aspekt.Infrastructure.Implementation
 
         public async Task<List<Country>> GetAll()
         {
-            return await _applicationDbContext.Countries.ToListAsync();
+            return await _applicationDbContext.Countries.Include(c => c.Contacts).ToListAsync();  
         }
 
         public async Task<Country> GetById(int id)
         {
             return await _applicationDbContext.Countries.FindAsync(id);
         }
+
+        public async Task<Dictionary<string, int>> GetCompanyStatisticsByCountryId(int countryId)
+        {
+            var companyStats = await _applicationDbContext.Contacts
+                .Where(c => c.CountryId == countryId) 
+                .GroupBy(c => c.CompanyId)
+                .Select(g => new
+                {
+                    CompanyId = g.Key,
+                    ContactCount = g.Count()
+                })
+                .Join(_applicationDbContext.Companies,
+                      stats => stats.CompanyId,
+                      co => co.CompanyId,
+                      (stats, co) => new
+                      {
+                          CompanyName = co.CompanyName,
+                          ContactCount = stats.ContactCount
+                      })
+                .ToDictionaryAsync(x => x.CompanyName, x => x.ContactCount); 
+
+            return companyStats;
+        }
+
 
         public async Task<Country> Update(Country country)
         {

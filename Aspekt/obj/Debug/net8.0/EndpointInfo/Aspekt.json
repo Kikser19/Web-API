@@ -10,6 +10,24 @@
         "tags": [
           "Company"
         ],
+        "parameters": [
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -144,6 +162,196 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contact/getContacts": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/contact/{id}": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactGetByIdQuery"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactGetByIdQuery"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactGetByIdQuery"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Contact/contact/{id}": {
+      "delete": {
+        "tags": [
+          "Contact"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contact/createContact": {
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateContactRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateContactRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateContactRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contact/update/{id}": {
+      "put": {
+        "tags": [
+          "Contact"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contact/ContactWithCompanyAndCountry": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contact/FilterContacts": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "countryid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -298,34 +506,32 @@
           }
         }
       }
+    },
+    "/api/Country/getCompanyStatistics": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "parameters": [
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Company": {
-        "required": [
-          "companyName"
-        ],
-        "type": "object",
-        "properties": {
-          "companyId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "companyName": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Contact"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CompanyGetByIdQuery": {
         "type": "object",
         "properties": {
@@ -354,39 +560,19 @@
             "type": "integer",
             "format": "int32"
           },
-          "company": {
-            "$ref": "#/components/schemas/Company"
-          },
           "countryId": {
             "type": "integer",
             "format": "int32"
-          },
-          "country": {
-            "$ref": "#/components/schemas/Country"
           }
         },
         "additionalProperties": false
       },
-      "Country": {
-        "required": [
-          "countryName"
-        ],
+      "ContactGetByIdQuery": {
         "type": "object",
         "properties": {
-          "countryId": {
+          "id": {
             "type": "integer",
             "format": "int32"
-          },
-          "countryName": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Contact"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -407,6 +593,24 @@
           "companyName": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateContactRequest": {
+        "type": "object",
+        "properties": {
+          "contactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -441,6 +645,33 @@
               "$ref": "#/components/schemas/Contact"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateContactRequest": {
+        "required": [
+          "companyId",
+          "contactName",
+          "countryId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

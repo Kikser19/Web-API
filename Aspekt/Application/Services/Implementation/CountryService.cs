@@ -36,6 +36,11 @@ namespace Aspekt.Application.Services.Implementation
             return await _countryRepository.GetById(id);
         }
 
+        public async Task<Dictionary<string, int>> GetCompanyStatisticsByCountryId(int countryId)
+        {
+            return await _countryRepository.GetCompanyStatisticsByCountryId(countryId);
+        }
+
         public async Task<Country> Update(Country country)
         {
             return await _countryRepository.Update(country);

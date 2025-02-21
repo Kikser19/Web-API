@@ -40,13 +40,13 @@ namespace Aspekt.Infrastructure
                 .HasMaxLength(100);
 
             modelBuilder.Entity<Contact>()
-                .HasOne(c => c.Company)
+                .HasOne<Company>()
                 .WithMany(c => c.Contacts)
                 .HasForeignKey(c => c.CompanyId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Contact>()
-                .HasOne(c => c.Country)
+                .HasOne<Country>()
                 .WithMany(c => c.Contacts)
                 .HasForeignKey(c => c.CountryId)
                 .OnDelete(DeleteBehavior.Cascade);

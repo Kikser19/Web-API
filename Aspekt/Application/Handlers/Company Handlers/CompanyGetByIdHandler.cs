@@ -8,12 +8,10 @@ namespace Aspekt.Application.Handlers.Company_Handlers
     public class CompanyGetByIdHandler : IRequestHandler<CompanyGetByIdQuery, CompanyGetByIdResponse>
     {
         private readonly ICompanyService _companyService;
-        //private readonly IMapper _mapper;
 
         public CompanyGetByIdHandler(ICompanyService _companyService)
         {
             this._companyService = _companyService;
-            //_mapper = mapper;
         }
         public async Task<CompanyGetByIdResponse> Handle(CompanyGetByIdQuery request, CancellationToken cancellationToken)
         {

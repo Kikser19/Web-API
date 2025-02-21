@@ -1,0 +1,28 @@
+version: '3.4'
+
+networks:
+  network:  
+
+services:
+  Aspekt_DB:
+    container_name: Aspekt_DB
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+     - 8002:1433
+    environment:
+     - ACCEPT_EULA=Y
+     - MSSQL_SA_PASSWORD=Kikser.2001
+    networks:
+     - network
+  aspekt:
+    container_name: aspekt
+    ports:
+     - 8001:80
+    image: ${DOCKER_REGISTRY-}aspekt
+    build:
+      context: .
+      dockerfile: Aspekt/Dockerfile
+    depends_on:
+     - Aspekt_DB
+    networks:
+     - network

@@ -11,12 +11,10 @@ namespace Aspekt.Application.Handlers.Company_Handlers
     public class CompanyDeleteHandler : IRequestHandler<DeleteCompanyCommand, Unit>
     {
         private readonly ICompanyService _companyService;
-        //private readonly IMapper _mapper;
 
         public CompanyDeleteHandler(ICompanyService _companyService)
         {
             this._companyService = _companyService;
-            //_mapper = mapper;
         }
 
         public async Task<Unit> Handle(DeleteCompanyCommand request, CancellationToken cancellationToken)

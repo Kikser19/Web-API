@@ -19,9 +19,9 @@ namespace Aspekt.Api.Controllers
         }
 
         [HttpGet("getCompanies")]
-        public async Task<IActionResult> getAllCompanies()
+        public async Task<IActionResult> getAllCompanies(int? PageNumber, int? PageSize)
         {
-            var results = await _mediator.Send(new CompanyGetAllQuerry { }, default);
+            var results = await _mediator.Send(new CompanyGetAllQuerry { PageNumber = PageNumber, PageSize = PageSize}, default);
             return Ok(results);
         }
 

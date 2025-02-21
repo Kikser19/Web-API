@@ -11,12 +11,16 @@
 
         [Required]
         public string ContactName { get; set; }
-
+        
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
-
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public Contact(string contactName, int companyId, int countryId)
+        {
+            this.ContactName = contactName;
+            this.CompanyId = companyId;
+            this.CountryId = countryId;
+        }
+
     }
 
 }

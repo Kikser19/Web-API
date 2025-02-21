@@ -8,12 +8,10 @@ namespace Aspekt.Application.Handlers.Company_Handlers
     public class UpdateCompanyHandler : IRequestHandler<UpdateCompanyCommand, CompanyUpdateResponse>
     {
         private readonly ICompanyService _companyService;
-        //private readonly IMapper _mapper;
 
         public UpdateCompanyHandler(ICompanyService _companyService)
         {
             this._companyService = _companyService;
-            //_mapper = mapper;
         }
         public async Task<CompanyUpdateResponse> Handle(UpdateCompanyCommand request, CancellationToken cancellationToken)
         {

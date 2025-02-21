@@ -18,10 +18,15 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(builder.Configuration.GetConnectionString("Aspekt_DB")));
+builder.Services.AddLogging(configure => configure.AddConsole());
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+
+
 
 var app = builder.Build();
 

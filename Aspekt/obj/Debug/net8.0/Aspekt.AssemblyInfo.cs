@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5cb98288-332e-4fff-8110-7f183781033b")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aspekt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb2153fe2a0f96e9a7b7f60e4e454928c64fc06b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e72d36d087a97a2ac5500096e7bf0ed6a784cd5d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aspekt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aspekt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

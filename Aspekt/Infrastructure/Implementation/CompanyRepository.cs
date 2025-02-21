@@ -14,9 +14,16 @@ namespace Aspekt.Infrastructure.Implementation
             this._applicationDbContext = _applicationDbContext;
 
         }
-        public async Task<List<Company>> GetAll()
+        public async Task<List<Company>> GetAll(int? PageNumber = 1, int? PageSize = 10)
         {
-            return await _applicationDbContext.Companies.ToListAsync();
+            PageNumber = PageNumber ?? 1;
+            PageSize = PageSize ?? 10;
+
+            return await _applicationDbContext.Companies
+                                .Include(c => c.Contacts)
+                                .Skip((PageNumber.Value - 1) * PageSize.Value)
+                                .Take(PageSize.Value)                         
+                                .ToListAsync();
         }
         public async Task<CompanyCreateResponse> Create(Company company)
         {

@@ -26,9 +26,9 @@ namespace Aspekt.Application.Services.Implementation
             await _companyRepository.Delete(company);
         }
 
-        public async Task<List<Company>> GetAll()
+        public async Task<List<Company>> GetAll(int? PageNumber, int? PageSize)
         {
-            return await _companyRepository.GetAll();
+            return await _companyRepository.GetAll(PageNumber, PageSize);
         }
 
         public async Task<Company> GetById(int id)

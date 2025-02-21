@@ -1,12 +1,8 @@
-﻿using Aspekt.Application.Command.Company_Commands;
-using Aspekt.Application.Command.Country_Commands;
-using Aspekt.Application.Queries.Company;
+﻿using Aspekt.Application.Command.Country_Commands;
 using Aspekt.Application.Queries.Country;
-using Aspekt.Application.Request_Models.Company_Request;
 using Aspekt.Application.Request_Models.Country_Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Aspekt.Api.Controllers
 {
@@ -15,16 +11,20 @@ namespace Aspekt.Api.Controllers
     public class CountryController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<CountryController> _logger;
 
-        public CountryController(IMediator _mediator)
+        public CountryController(IMediator _mediator, ILogger<CountryController> _logger)
         {
             this._mediator = _mediator;
+            this._logger = _logger;
         }
 
         [HttpGet("getCountries")]
         public async Task<IActionResult> getAllCountries()
         {
+            _logger.LogInformation("Fetching all countries...");
             var results = await _mediator.Send(new CountryGetAllQuery { }, default);
+            _logger.LogInformation("Successfully loadad countries.");
             return Ok(results);
         }
 
@@ -56,6 +56,12 @@ namespace Aspekt.Api.Controllers
             countryRequest.Id = id;
             var result = await _mediator.Send(new UpdateCountryCommand { Country = countryRequest }, default);
             return Ok(result);
+        }
+        [HttpGet("getCompanyStatistics")]
+        public async Task<IActionResult> GetCompanyStatisticsByCountryId(int countryId)
+        {
+            var results = await _mediator.Send(new CountryGetStatisticsQuery { countryId = countryId }, default);
+            return Ok(results);
         }
     }
 }

@@ -1,0 +1,131 @@
+name: dockercompose10062450775284741568
+services:
+  Aspekt_DB:
+    container_name: Aspekt_DB
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Kikser.2001
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+  aspekt:
+    build:
+      context: C:\Users\angel\OneDrive\Desktop\App\Aspekt
+      dockerfile: Aspekt/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Aspekt
+      target: base
+    container_name: aspekt
+    depends_on:
+      Aspekt_DB:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+    image: aspekt:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net8.0/Aspekt.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      network: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8001"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\OneDrive\Desktop\App\Aspekt
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\.nuget\packages
+        target: /.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+        target: /.nuget/fallbackpackages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  network:
+    name: dockercompose10062450775284741568_network

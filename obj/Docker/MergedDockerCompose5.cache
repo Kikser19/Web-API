@@ -1,0 +1,58 @@
+name: dockercompose10062450775284741568
+services:
+  Aspekt_DB:
+    container_name: Aspekt_DB
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Kikser.2001
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+  aspekt:
+    build:
+      context: C:\Users\angel\OneDrive\Desktop\App\Aspekt
+      dockerfile: Aspekt/Dockerfile
+    container_name: aspekt
+    depends_on:
+      Aspekt_DB:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: aspekt
+    networks:
+      network: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8001"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\angel\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  network:
+    name: dockercompose10062450775284741568_network

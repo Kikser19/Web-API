@@ -9,17 +9,14 @@ namespace Aspekt.Application.Handlers.Company_Handlers
     public class CompanyGetAllHandlers : IRequestHandler<CompanyGetAllQuerry, CompanyGetAllResponse>
     {
         private readonly ICompanyService _companyService;
-        //private readonly IMapper _mapper;
 
         public CompanyGetAllHandlers(ICompanyService _companyService)
         {
             this._companyService = _companyService;
-           // _mapper = mapper;
         }
         public async Task<CompanyGetAllResponse> Handle(CompanyGetAllQuerry request, CancellationToken cancellationToken)
         {
-            var companies = await _companyService.GetAll();
-            //List<Company> activities = _mapper.Map<List<Company>>(activityImages);
+            var companies = await _companyService.GetAll(request.PageNumber, request.PageSize);
             return new CompanyGetAllResponse(companies);
         }
     }
