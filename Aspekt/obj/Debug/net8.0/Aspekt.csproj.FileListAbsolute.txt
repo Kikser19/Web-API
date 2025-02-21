@@ -175,3 +175,6 @@ C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\Aspekt.genrun
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\ref\Aspekt.dll
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\obj\Debug\net8.0\Aspekt.sourcelink.json
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\Aspekt\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

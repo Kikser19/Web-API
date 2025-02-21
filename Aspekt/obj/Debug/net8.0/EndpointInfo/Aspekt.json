@@ -344,7 +344,7 @@
             }
           },
           {
-            "name": "countryid",
+            "name": "countryId",
             "in": "query",
             "schema": {
               "type": "integer",

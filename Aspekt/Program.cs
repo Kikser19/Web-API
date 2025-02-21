@@ -1,8 +1,10 @@
 using Aspekt.Application.Services.Implementation;
 using Aspekt.Application.Services.Interfaces;
+using Aspekt.Application.Validators.Company_Validator;
 using Aspekt.Infrastructure;
 using Aspekt.Infrastructure.Implementation;
 using Aspekt.Infrastructure.Interfaces;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +25,7 @@ builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(builder.Configuration.GetConnectionString("Aspekt_DB")));
 builder.Services.AddLogging(configure => configure.AddConsole());
-
+builder.Services.AddValidatorsFromAssemblyContaining<CreateCompanyValidator>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
 
