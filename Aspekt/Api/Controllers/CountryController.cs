@@ -75,28 +75,6 @@ namespace Aspekt.Api.Controllers
             }
         }
 
-        [HttpDelete("country/{id}")]
-        public async Task<IActionResult> deleteCountry(int id)
-        {
-            _logger.LogInformation("Deleting country with ID: {Id}", id);
-            try
-            {
-                var result = await _mediator.Send(new DeleteCountryCommand { Id = id }, default);
-                if (result == null)
-                {
-                    _logger.LogWarning("Country with ID: {Id} not found.", id);
-                    return NotFound($"Country with ID {id} not found.");
-                }
-                _logger.LogInformation("Successfully deleted country with ID: {Id}", id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while deleting country with ID: {Id}", id);
-                return StatusCode(500, "Internal Server Error");
-            }
-        }
-
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateCountry(UpdateCountryRequest countryRequest, [FromRoute] int id)
         {
@@ -116,6 +94,28 @@ namespace Aspekt.Api.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while updating country with ID: {Id}", id);
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpDelete("country/{id}")]
+        public async Task<IActionResult> deleteCountry(int id)
+        {
+            _logger.LogInformation("Deleting country with ID: {Id}", id);
+            try
+            {
+                var result = await _mediator.Send(new DeleteCountryCommand { Id = id }, default);
+                if (result == null)
+                {
+                    _logger.LogWarning("Country with ID: {Id} not found.", id);
+                    return NotFound($"Country with ID {id} not found.");
+                }
+                _logger.LogInformation("Successfully deleted country with ID: {Id}", id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting country with ID: {Id}", id);
                 return StatusCode(500, "Internal Server Error");
             }
         }

@@ -37,45 +37,6 @@ namespace Aspekt.Api.Controllers
             }
         }
 
-        [HttpPost("createCompany")]
-        public async Task<IActionResult> createCompany([FromBody] CreateCompanyRequest newCompany)
-        {
-            _logger.LogInformation("Creating a new company");
-            try
-            {
-                var result = await _mediator.Send(new CreateCompanyCommand { Company = newCompany }, default);
-                _logger.LogInformation("Successfully created company");
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while creating company");
-                return StatusCode(500, "Internal Server Error");
-            }
-        }
-
-        [HttpDelete("/company/{id}")]
-        public async Task<IActionResult> deleteCompany(int id)
-        {
-            _logger.LogInformation("Deleting company with ID: {Id}", id);
-            try
-            {
-                var result = await _mediator.Send(new DeleteCompanyCommand { Id = id }, default);
-                if (result == null)
-                {
-                    _logger.LogWarning("Company with ID: {Id} not found.", id);
-                    return NotFound($"Company with ID {id} not found.");
-                }
-                _logger.LogInformation("Successfully deleted company with ID: {Id}", id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while deleting company with ID: {Id}", id);
-                return StatusCode(500, "Internal Server Error");
-            }
-        }
-
         [HttpGet("/company/{id}")]
         public async Task<ActionResult<CompanyGetByIdQuery>> GetById(int id)
         {
@@ -94,6 +55,23 @@ namespace Aspekt.Api.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while fetching company with ID: {Id}", id);
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpPost("createCompany")]
+        public async Task<IActionResult> createCompany([FromBody] CreateCompanyRequest newCompany)
+        {
+            _logger.LogInformation("Creating a new company");
+            try
+            {
+                var result = await _mediator.Send(new CreateCompanyCommand { Company = newCompany }, default);
+                _logger.LogInformation("Successfully created company");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while creating company");
                 return StatusCode(500, "Internal Server Error");
             }
         }
@@ -117,6 +95,28 @@ namespace Aspekt.Api.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while updating company with ID: {Id}", id);
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpDelete("/company/{id}")]
+        public async Task<IActionResult> deleteCompany(int id)
+        {
+            _logger.LogInformation("Deleting company with ID: {Id}", id);
+            try
+            {
+                var result = await _mediator.Send(new DeleteCompanyCommand { Id = id }, default);
+                if (result == null)
+                {
+                    _logger.LogWarning("Company with ID: {Id} not found.", id);
+                    return NotFound($"Company with ID {id} not found.");
+                }
+                _logger.LogInformation("Successfully deleted company with ID: {Id}", id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting company with ID: {Id}", id);
                 return StatusCode(500, "Internal Server Error");
             }
         }

@@ -35,3 +35,5 @@ C:\Users\angel\OneDrive\Desktop\App\Aspekt\bin\Debug\Aspekt.pdb
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\angel\OneDrive\Desktop\App\Aspekt\obj\Debug\docker-c.35A3FFBA.Up2Date
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\bin\Debug\FluentValidation.dll
+C:\Users\angel\OneDrive\Desktop\App\Aspekt\bin\Debug\FluentValidation.DependencyInjectionExtensions.dll

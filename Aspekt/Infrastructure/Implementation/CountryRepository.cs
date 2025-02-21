@@ -34,7 +34,9 @@ namespace Aspekt.Infrastructure.Implementation
 
         public async Task<Country> GetById(int id)
         {
-            return await _applicationDbContext.Countries.FindAsync(id);
+            return await _applicationDbContext.Countries
+                                        .Include(c => c.Contacts)
+                                        .FirstOrDefaultAsync(c => c.CountryId == id);
         }
 
         public async Task<Dictionary<string, int>> GetCompanyStatisticsByCountryId(int countryId)

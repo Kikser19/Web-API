@@ -35,7 +35,9 @@ namespace Aspekt.Infrastructure.Implementation
 
         public async Task<Company> GetById(int id)
         {
-            return await _applicationDbContext.Set<Company>().FindAsync(id);
+            return await _applicationDbContext.Companies
+                            .Include(c => c.Contacts)
+                            .FirstOrDefaultAsync(c => c.CompanyId == id);
         }
 
         public async Task Delete(Company company)

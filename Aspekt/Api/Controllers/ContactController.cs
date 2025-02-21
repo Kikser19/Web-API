@@ -59,28 +59,6 @@ namespace Aspekt.Api.Controllers
             }
         }
 
-        [HttpDelete("contact/{id}")]
-        public async Task<IActionResult> deleteContact(int id)
-        {
-            _logger.LogInformation("Deleting contact with ID: {Id}", id);
-            try
-            {
-                var result = await _mediator.Send(new DeleteContactCommand { Id = id }, default);
-                if (result == null)
-                {
-                    _logger.LogWarning("Contact with ID: {Id} not found.", id);
-                    return NotFound($"Contact with ID {id} not found.");
-                }
-                _logger.LogInformation("Successfully deleted contact with ID: {Id}", id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while deleting contact with ID: {Id}", id);
-                return StatusCode(500, "Internal Server Error");
-            }
-        }
-
         [HttpPost("createContact")]
         public async Task<IActionResult> createContact(CreateContactRequest newContact)
         {
@@ -117,6 +95,28 @@ namespace Aspekt.Api.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while updating contact with ID: {Id}", id);
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpDelete("contact/{id}")]
+        public async Task<IActionResult> deleteContact(int id)
+        {
+            _logger.LogInformation("Deleting contact with ID: {Id}", id);
+            try
+            {
+                var result = await _mediator.Send(new DeleteContactCommand { Id = id }, default);
+                if (result == null)
+                {
+                    _logger.LogWarning("Contact with ID: {Id} not found.", id);
+                    return NotFound($"Contact with ID {id} not found.");
+                }
+                _logger.LogInformation("Successfully deleted contact with ID: {Id}", id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting contact with ID: {Id}", id);
                 return StatusCode(500, "Internal Server Error");
             }
         }
